@@ -48,36 +48,36 @@
                 <TextBlock Margin="2,1">Cancel search</TextBlock>
             </Button>
         </Grid>
-        <StackPanel>
-            <StackPanel x:Name="NoNewGamesFound"
-                        Visibility="Visible"
-                        Background="LightCoral"
-                        VerticalAlignment="Center"
-                        Margin="0, 7">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock FontWeight="Bold"
-                               Padding="0, 7, 7, 7"
-                               FontSize="20"
-                               Foreground="Red"
-                    >
-                        <TextBlock.Text>
-                            ⮾
-                        </TextBlock.Text>
-                    </TextBlock>
-                    <TextBlock TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    >
-                        <TextBlock.Text>
-                            No new games found (︶︹︺)
-                        </TextBlock.Text>
-                    </TextBlock>
+        <ScrollViewer x:Name="GamesScroll">
+            <StackPanel>
+                <StackPanel x:Name="NoNewGamesFound"
+                            Visibility="Visible"
+                            Background="LightCoral"
+                            VerticalAlignment="Center"
+                            Margin="0, 7">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock FontWeight="Bold"
+                                   Padding="0, 7, 7, 7"
+                                   FontSize="20"
+                                   Foreground="Red"
+                        >
+                            <TextBlock.Text>
+                                ⮾
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        >
+                            <TextBlock.Text>
+                                No new games found (︶︹︺)
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                    <ProgressBar
+                        x:Name="NoNewGamesAutoHideProgress"
+                        Value="0"
+                        Foreground="#FFB00606"
+                    />
                 </StackPanel>
-                <ProgressBar
-                    x:Name="NoNewGamesAutoHideProgress"
-                    Value="0"
-                    Foreground="#FFB00606"
-                />
-            </StackPanel>
-            <ScrollViewer x:Name="GamesScroll">
                 <ItemsControl x:Name="GamesControl" Margin="0,0,10,1">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -110,7 +110,7 @@
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-            </ScrollViewer>
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </DockPanel>
 </UserControl>
